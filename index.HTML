@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Enciclopedia Monster Hunter</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="img/logo.png" alt="Logo" class="logo" onerror="this.style.display='none'"/>
+        <h1>Enciclopedia Monster Hunter</h1>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="monstruos.html">Monstruos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner container">
+        <div class="hero-text">
+          <h2>Explora el mundo de los monstruos</h2>
+          <p>Descubre las criaturas más temidas del universo <strong>Monster Hunter</strong>. Fichas rápidas, hábitats y debilidades a simple vista.</p>
+          <a class="btn" href="monstruos.html">Ver monstruos</a>
+        </div>
+        <div class="hero-art">
+          <!-- imagen decorativa del monstruo; si quieres poner una ilustración grande de fondo, puedes usar CSS background-image -->
+          <img src="img/nerguigante.png" alt="Rathalos" />
+        </div>
+      </div>
+    </section>
+
+    <section class="intro container">
+      <h3>¿Qué encontrarás aquí?</h3>
+      <p>Fichas resumidas de monstruos: tipo, hábitat y consejos rápidos. Ideal como guía visual para nuevos cazadores.</p>
+    </section>
+<section class="monsters-section container">
+  <h2>Monstruos</h2>
+
+  <div style="display:flex; gap:12px; margin-top:12px; align-items:center;">
+    <input id="searchInput" placeholder="Buscar monstruo, tipo o descripción..." style="flex:1; padding:10px; border-radius:8px; border:0; background:#111; color:#fff;">
+    <select id="filterTipo" style="padding:10px; border-radius:8px; background:#111; color:#fff;">
+      <option value="all">Todos los tipos</option>
+      <option value="wyvern">Wyvern</option>
+      <option value="wyvern volador">Wyvern volador</option>
+      <option value="pterrordax">Pterrordax</option>
+     
+    </select>
+  </div>
+
+  <div id="monstersGrid" class="grid" style="margin-top:18px;">
+    
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Enciclopedia Monster Hunter — Proyecto académico</p>
+    </div>
+  </footer>
+<div id="monsterModal" class="modal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button id="modalClose" class="modal-close" aria-label="Cerrar">✕</button>
+    <div style="display:grid; grid-template-columns: 220px 1fr; gap:18px; align-items:start;">
+      <img id="modalImg" src="img/placeholder.png" alt="" style="width:100%; border-radius:8px; height:160px; object-fit:cover;">
+      <div>
+        <h3 id="modalTitle"></h3>
+        <div class="muted" style="margin-bottom:8px;">
+          <strong>Tipo:</strong> <span id="modalTipo"></span> •
+          <strong>Hábitat:</strong> <span id="modalHabitat"></span>
+        </div>
+        <p id="modalDesc" style="margin-bottom:8px;"></p>
+        <p><strong>Debilidades:</strong> <span id="modalDebilidades"></span></p>
+        <p><strong>Resistencias:</strong> <span id="modalResistencias"></span></p>
+        <p><strong>Tamaño:</strong> <span id="modalTamano"></span></p>
+        <div style="margin-top:10px;">
+          <strong>Consejos:</strong>
+          <ul id="modalConsejos"></ul>
+        </div>
+        <div style="margin-top:12px;">
+          <button id="modalFavBtn" class="btn">Agregar favorito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="toast" style="position:fixed; right:18px; bottom:18px; background:#222; padding:10px 14px; border-radius:8px; box-shadow:0 6px 20px rgba(0,0,0,0.6); opacity:0; transition:opacity .2s; color:#fff; z-index:1000;"></div>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>

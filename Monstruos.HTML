@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Monstruos — Enciclopedia Monster Hunter</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>Enciclopedia Monster Hunter</h1>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a class="active" href="monstruos.html">Monstruos</a></li>
+        
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container monsters-section">
+      <h2>Catálogo de monstruos</h2>
+
+      <!-- 🔍 Barra de búsqueda y filtro -->
+      <div class="filtros">
+        <input type="text" id="searchInput" placeholder="Buscar monstruo...">
+        <select id="filterTipo">
+          <option value="all">Todos</option>
+          <option value="wyvern volador">Wyvern volador</option>
+          <option value="wyvern con colmillos">Wyvern con colmillos</option>
+          <option value="pterrordax">Pterrordax</option>
+        </select>
+      </div>
+
+      <!-- 🧩 Aquí se cargan las tarjetas -->
+      <div id="monstersGrid" class="grid"></div>
+    </section>
+  </main>
+
+  <!-- 📘 Modal para ver ficha -->
+  <div id="monsterModal" class="modal" aria-hidden="true">
+    <div class="modal-panel">
+      <button id="modalClose" class="modal-close">✕</button>
+      <img id="modalImg" src="" alt="" class="modal-img">
+      <h3 id="modalTitle">Título</h3>
+      <p><strong>Tipo:</strong> <span id="modalTipo"></span></p>
+      <p><strong>Hábitat:</strong> <span id="modalHabitat"></span></p>
+      <p><strong>Descripción:</strong> <span id="modalDesc"></span></p>
+      <p><strong>Debilidades:</strong> <span id="modalDebilidades"></span></p>
+      <p><strong>Resistencias:</strong> <span id="modalResistencias"></span></p>
+      <p><strong>Tamaño:</strong> <span id="modalTamano"></span></p>
+      <h4>Consejos</h4>
+      <ul id="modalConsejos"></ul>
+      <button id="modalFavBtn" class="btn">⭐ Añadir a favoritos</button>
+    </div>
+  </div>
+
+ 
+  <div id="toast" class="toast"></div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Enciclopedia Monster Hunter — Proyecto académico</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
