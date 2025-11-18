@@ -1,7 +1,15 @@
-// js/script.js
 
-// ==== Datos de ejemplo ====
-console.log("✅ script.js cargado correctamente");
+
+
+console.log(" script.js cargado correctamente");
+fetch('http://localhost:3000/monstruos')
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        // Aquí renderizas los monstruos en tu HTML
+    })
+    .catch(err => console.error(err));
+
 
 const monstruos = [
 {
@@ -118,7 +126,7 @@ const modalFavBtn = document.getElementById("modalFavBtn");
 
 const toast = document.getElementById("toast");
 
-// ==== Mostrar fichas ====
+
 function mostrarMonstruos(lista) {
   grid.innerHTML = "";
   lista.forEach(m => {
@@ -138,7 +146,6 @@ function mostrarMonstruos(lista) {
   });
 }
 
-// ==== Abrir modal ====
 function abrirModal(m) {
   modalImg.src = m.img;
   modalTitle.textContent = m.nombre;
@@ -160,12 +167,12 @@ function abrirModal(m) {
   modal.setAttribute("aria-hidden", "false");
 }
 
-// ==== Cerrar modal ====
+
 modalClose.addEventListener("click", () => {
   modal.setAttribute("aria-hidden", "true");
 });
 
-// ==== Buscar y filtrar ====
+
 function filtrarMonstruos() {
   const texto = searchInput.value.toLowerCase();
   const tipo = filterTipo.value;
@@ -181,12 +188,12 @@ function filtrarMonstruos() {
 searchInput.addEventListener("input", filtrarMonstruos);
 filterTipo.addEventListener("change", filtrarMonstruos);
 
-// ==== Toast ====
+
 function mostrarToast(mensaje) {
   toast.textContent = mensaje;
   toast.style.opacity = "1";
   setTimeout(() => (toast.style.opacity = "0"), 2500);
 }
 
-// ==== Inicialización ====
+
 mostrarMonstruos(monstruos);

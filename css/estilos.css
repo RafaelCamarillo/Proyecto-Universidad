@@ -1,4 +1,4 @@
-/* ==== RESETEO ==== */
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -242,3 +242,62 @@ body {
   .grid { grid-template-columns: 1fr; }
   .hero-text h2 { font-size: 2rem; }
 }
+
+
+.form-card {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.45);
+  max-width: 600px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-card h2 {
+  color: var(--accent);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.form-card label {
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.form-card input,
+.form-card textarea {
+  width: 100%;
+  background: #0f0f0f;
+  border: 1px solid rgba(212,160,23,0.2);
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: all .2s ease;
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 6px rgba(212,160,23,0.6);
+}
+
+.form-card textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.form-card .btn {
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+  padding: 14px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+}
+

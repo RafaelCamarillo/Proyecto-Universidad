@@ -1,0 +1,43 @@
+<body>
+
+    <header class="site-header">
+<link rel="stylesheet" href="../CSS/estilos.css">
+        <div class="container header-inner">
+            <div class="brand">
+                <h1>Agregar Monstruo</h1>
+            </div>
+        </div>
+    </header>
+
+    <section class="monsters-section">
+        <div class="container">
+
+            <div class="form-card">
+                <h2>Nuevo Monstruo</h2>
+
+                <form action="http://localhost:3000/monstruos" method="POST" enctype="multipart/form-data">
+
+                    <label>Nombre</label>
+                    <input type="text" name="nombre" required>
+
+                    <label>Tipo</label>
+                    <input type="text" name="tipo" required>
+
+                    <label>Hábitat</label>
+                    <input type="text" name="habitat" required>
+
+                    <label>Descripción</label>
+                    <textarea name="descripcion" required></textarea>
+
+                    <label>Imagen</label>
+                    <input type="file" name="imagen" accept="image/*" required>
+
+                    <button type="submit" class="btn">Guardar Monstruo</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+
